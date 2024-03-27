@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Img from "../../assets/pizzas-especiais.jpg"
 
 interface PropsBoxItemComponent {
     categorie: string
@@ -12,14 +11,24 @@ interface PropsBoxItemComponent {
 
 export function BoxItemComponent( props: PropsBoxItemComponent ) {
     return(
-        <div className="flex flex-col rounded border-2 border-#C4C4C4 bg-red-500">
-            <div>
-                {/* <Image src={props.image} alt="" width={100} height={100} /> */}
+        <div className="flex flex-col rounded border-2 border-#C4C4C4 w-56 ">
+            
+            <div className="w-52 flex justify-center items-center p-2">
+                <Image src={props.image} alt="" />
             </div>
 
-            <div>
+            <div className="p-4">
                 <p>{props.title}</p>
                 <p>{props.describe}</p>
+                <div className="flex justify-center items-center">
+                    <p>R$ {props.price}</p>
+                </div>
+            </div>
+
+            <div className="flex justify-center items-center ">
+                <button className="bg-green-500 p-4 text-white w-full hover:bg-green-600">
+                    Adicionar ao Carrinho
+                </button>
             </div>
 
         </div>
